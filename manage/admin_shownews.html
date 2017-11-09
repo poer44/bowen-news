@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/news_view.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/lightbox.min.css">
+</head>
+<body>
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li><a href="admin_newsmanage.php?p=1">新闻管理</a></li>
+        <li class="active">查看新闻</li>
+    </ol>
+    <div class="nheader">
+        <h1><?php echo $data['title']; ?></h1>
+        <p class='text-info'><?php echo $data['admin_id']."&nbsp&nbsp".$data['addtime']; ?></p>
+        <div>
+            <a class="img-responsive-link" href="<?php echo $data['pic']; ?>" data-lightbox="example-1"><img
+                    class="img-responsive" src="<?php echo $data['pic']; ?>" alt="image-1" class="img-rounded"
+                    width="800px"
+                    height="480px" border="0"/></a>
+        </div>
+    </div>
+    <div class="ncontent">
+        <h3><?php echo $data['content']; ?></h3>
+        <br>
+        <hr>
+        <br>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+.container {
+    padding-top: 40px;
+}
+
+#userlogo {
+    float: left;
+    width: 120px;
+    height: 120px;
+}
+
+#usp {
+    width: 120px;
+    height: 120px;
+}
+
+#ust {
+    overflow: hidden;
+}

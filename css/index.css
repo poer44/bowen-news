@@ -1,0 +1,94 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+@media only screen and (min-width: 992px) {
+    .carousel,
+    .carousel .item {
+        height: 500px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .carousel,
+    .carousel .item {
+        height: 400px;
+    }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+    .carousel,
+    .carousel .item {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 479px) {
+    .banner {
+        padding-top: 50px;
+    }
+
+    .carousel,
+    .carousel .item {
+        height: 200px;
+    }
+}
+
+#carousel-bg img {
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    width: 100%;
+    bottom: 0px;
+    height: auto;
+    background-color: #202020;
+}
+
+#sort div {
+    text-align: center;
+    margin-top: 30px;
+}
+
+#sort_name div {
+    text-align: center;
+}
+
+#newstitle1, #newstitle2 {
+    text-decoration: none;
+    color: black;
+}
+
+.carousel-caption a {
+    text-decoration: none;
+    color: white;
+}
+
+.carousel-caption a:hover {
+    color: #2b669a;
+}
+
+h1 small {
+    color: #2e6da4;
+}
+
+.glyphicon {
+    color: white;
+}
+
+.ico {
+    width: 50px;
+    height: 50px;
+}
+
+#qrcode {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 40px;
+}
+
+.hr {
+    border-top: 2px solid #428bca;
+}

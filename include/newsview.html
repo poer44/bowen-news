@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title><?php echo $data['title']; ?>&nbsp;-&nbsp;博闻beta </title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/news_view.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/lightbox.min.css">
+    <link href="../css/slide-unlock.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="nheader">
+        <h1><?php echo $data['title']; ?></h1>
+        <p class='text-info'><?php echo $data['admin_id']."&nbsp&nbsp".$data['addtime']; ?></p>
+        <div>
+            <a class="img-responsive-link" href="<?php echo $data['pic']; ?>" data-lightbox="example-1"><img
+                    class="img-responsive" src="<?php echo $data['pic']; ?>" alt="image-1" class="img-rounded"
+                    width="800px"
+                    height="480px" border="0"/></a>
+        </div>
+    </div>
+    <div class="ncontent">
+        <span><?php echo $data['content']; ?></span>
+        <br>
+    </div>
+    <br>
+    <br>
+    <div class="emoji">
+        <div id="emojilogin">
+            <span class="text-danger">请<a href="../login.html">登录</a>后点赞或点踩</span>
+        </div>
+        <a onclick="like()">
+            <div class="support">
+                <img src="../img/zan.png"/><span>喜欢(<?php echo $data['support_count'] ?>)</span>
+                <input type="hidden" value="0" id="prelike">
+            </div>
+        </a>
+        <a onclick="hate()">
+            <div class="dislike">
+                <img src="../img/dislike.png"/><span>不喜欢(<?php echo $data['hate_count'] ?>)</span>
+                <input type="hidden" value="0" id="prehate">
+            </div>
+        </a>
+    </div>
+    <hr class="hr">
+    <div class="comment">
+        <?php
+    if(!isset($_SESSION['user_id'])){
+    ?>
+        <span class="text-danger">请<a href="../login.html">登录</a>后评论</span>
+        <?php
+    }
+    else{
+    ?>
+        <img id="spic" class="img-circle" src="<?php echo $_SESSION['userpic'] ?>">
+        <span class="text-primary">请留下您的评论</span>
+        <?php
+    }
+    ?>
+        <form method="post" action="include/comment_upload.php" onsubmit="return commentempty()">
+            <textarea id="editor_id" name="content"></textarea>
+            <div id="c_btn">
+                <button type="submit" class="btn btn-success">评论</button>
+            </div>
+            <input type="hidden" id="precom" name="precomment"
+                   value="<?php echo (int)($data['count(details)']+1) ?>">
+            <input type="hidden" name="news_id" value="<?php echo $data['id']?>"/>
+        </form>
+        <div id="slider">
+            <div id="slider_bg"></div>
+            <span id="label">>></span>
+            <span id="labelTip">右滑解锁评论按钮</span>
+        </div>
+
+    </div>
+    <br>
+    <br>
+    <div class="commentlist">
+        <span class="text-success" id="comt">评论列表(<?php echo $data['count(details)'] ?>)</span>
+        <table class="table">
+            <?php $i=0;foreach($commentdata as $vs):?>
+            <thead class="c<?php echo $vs['comment_id'] ?>">
+
+            <div style="display: none">
+                <input type="hidden" id="comid<?php echo $vs['comment_id'] ?>" value="<?php echo $vs['comment_id'] ?>">
+                <input type="hidden" id="recev<?php echo $vs['comment_id'] ?>" value="<?php echo $vs['user_id'] ?>">
+                <input type="hidden" id="send<?php echo $vs['comment_id'] ?>"
+                       value="<?php echo $_SESSION['user_id']; ?>">
+                <input type="hidden" id="red<?php echo $vs['comment_id'] ?>" value="<?php echo $vs['details'] ?>">
+            </div>
+            <tr>
+                <?php $i++; ?>
+                <td><a href="../user_home.php?id=<?php echo $vs['user_id'] ?>"><img class="img-circle"
+                                                                                    src="<?php echo $vs['user_pic'] ?>"
+                                                                                    style="width:40px;height: 40px"><span
+                        class="text-info"><?php echo $vs['user_id'] ?></span></a></td>
+                <td><span class="text-info"><?php echo $vs['addtime'] ?></span></td>
+                <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#".$i ?></span></td>
+                <td>
+                    <?php
+if(isset($_SESSION['user_id'])){
+      $comid=$vs['comment_id'];
+      if($vs['user_id']==$_SESSION['user_id']){
+          $uid=$_SESSION['user_id'];
+             echo "<a onclick=";
+             echo "newsview_del($comid,'$uid')";
+             echo ">删除</a>";
+                    }
+                    else{
+                    ?>
+                    <a data-toggle="modal" data-target="#myModal" onclick="reply(<?php echo; $comid; ?;>)">回复</a>
+
+                    <?php
+      }
+}
+?>
+                </td>
+            </tr>
+            </thead>
+            <tbody class="c<?php echo $vs['comment_id'] ?>">
+            <tr>
+                <td colspan="4">
+                    <span><?php echo $vs['details'] ?></span>
+                </td>
+            </tr>
+            </tbody>
+            <?php endforeach;?>
+        </table>
+    </div>
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Reply</h4>
+                </div>
+                <div class="modal-body">
+                    <pre><span id="replydetails"></span></pre>
+                    <textarea id="editor_id2" name="content2"></textarea></div>
+                <input type="hidden" id="comid">
+                <input type="hidden" id="send_user">
+                <input type="hidden" id="recev_user">
+                <input type="hidden" id="red">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="replybtn">提交更改</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+</div>
+<input type="hidden" id="hidden" value="<?php echo $i; ?>">
+<input type="hidden" id="news_id" value="<?php echo $id; ?>">
+<input type="hidden" id="user_id" value="<?php echo (isset($_SESSION['user_id']))?$_SESSION['user_id']:null; ?>">
+<input type="hidden" id="likecount" value="<?php echo $data['support_count'] ?>">
+<input type="hidden" id="hatecount" value="<?php echo $data['hate_count'] ?>">
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script charset="utf-8" src="/editor/kindeditor-all-min.js"></script>
+<script charset="utf-8" src="/editor/lang/zh-CN.js"></script>
+<script src="../js/newsview.js"></script>
+<script src="../js/emoji_userlist.js"></script>
+<script src="../js/jquery.slideunlock.js"></script>
+<script src="../js/delcomment.js"></script>
+<script src="../js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

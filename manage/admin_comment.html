@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="alert alert-success" id="alert">
+        <strong>删除成功</strong>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <span class="text-primary glyphicon glyphicon-user">用户名：</span>
+                <input type="text" class="form-control" id="s_id">
+            </div>
+            <div class="col-lg-6">
+                <span class="text-primary glyphicon glyphicon-comment">评论内容：</span>
+                <input type="text" class="form-control" id="s_detail">
+            </div>
+        </div>
+    </div>
+    <br>
+    <table class="table">
+        <?php
+                    $i=0;foreach($commentdata as $vs):
+                    ?>
+        <thead class="c<?php echo $vs['comment_id'] ?>" style="background-color: #d9edf7">
+        <tr>
+            <?php $i++; ?>
+            <td><a href="admin_shownews.php?id=<?php echo $vs['news_id'] ?>" target="rightifrane"><span
+                    class="text-info">RE:<?php echo $vs['title'] ?></span></a></td>
+            <td><span class="text-success">发布人：<?php echo $vs['user_id']; ?></span></td>
+            <td><span class="text-info"><?php echo $vs['addtime']; ?></span></td>
+            <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#".$i ?></span></td>
+            <td><?php $comid=$vs['comment_id'];echo "<span><a onclick='admin_del($comid)'>删除</a></span>"; ?></td>
+            <div style="display: none">
+                <input type="hidden" class="user_id" value="<?php echo $vs['user_id']; ?>" id="user_id<?php echo $i ?>">
+                <input type="hidden" class="details" value="<?php echo $vs['details']; ?>"
+                       id="details<?php echo $i; ?>"/>
+                <input type="hidden" class="comment_id" value="<?php echo $vs['comment_id']; ?>"
+                       id="comment_id<?php echo $i ?>">
+            </div>
+        </tr>
+        </thead>
+        <tbody class="c<?php echo $vs['comment_id'] ?>">
+        <tr>
+            <td colspan="5">
+                <span><?php echo $vs['details'] ?></span>
+            </td>
+        </tr>
+        </tbody>
+        <?php endforeach;
+if ($commentdata==null){
+echo '暂时没有评论';
+}
+?>
+    </table>
+</div>
+</body>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/delcomment.js"></script>
+<script src="../js/admin_comment.js"></script>
+</html>

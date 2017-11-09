@@ -1,0 +1,23 @@
+.jumbotron {
+    background-image: url("../img/admin_welcome.jpg");
+    background-size: cover;
+    color: #F1F1F1;
+}
+
+.ov {
+    background-color: #5acde2;
+    border-radius: 10px;
+}
+
+.ov > span {
+    font-size: 60px;
+}
+
+.ovimg {
+    width: 100px;
+    height: 100px;
+}
+
+#ipv {
+    font-size: 20px;
+}

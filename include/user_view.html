@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title><?php echo $userinfo['user_id']; ?>的个人主页 - 博闻beta</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/user_view.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/lightbox.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <table style="width:100%" id="ust">
+            <tr>
+                <td rowspan="3" id="usp"><a class="img-responsive-link" href="<?php echo $userinfo['user_pic']; ?>"
+                                            data-lightbox="example-1"><img src="<?php echo $userinfo['user_pic']; ?>"
+                                                                           class="img-circle" id="userlogo"></a>
+                </td>
+                <td><h2><?php echo $userinfo['user_id']; ?></h2></td>
+            </tr>
+            <tr>
+                <td><span class="text-info">最后登录时间：<?php echo $userinfo['user_lastlogin']; ?></span></td>
+        </table>
+    </div>
+
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <h3 class="panel-title" style="color:white">
+                TA的评论
+            </h3>
+        </div>
+        <div class="panel-body">
+            <table class="table">
+                <?php
+                    $i=0;foreach($commentdata as $vs):
+                    ?>
+                <thead style="background-color: #d9edf7">
+                <tr>
+                    <?php $i++; ?>
+                    <td><a href="../newsview.php?id=<?php echo $vs['news_id'] ?>" target="_blank"><span
+                            class="text-info">RE:<?php echo $vs['title'] ?></span></a></td>
+                    <td><span class="text-info"><?php echo $vs['addtime'] ?></span></td>
+                    <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#".$i ?></span></td>
+
+                </tr>
+                </thead>
+                <tbody class="c<?php echo $vs['comment_id'] ?>">
+                <tr>
+                    <td colspan="3">
+                        <span><?php echo $vs['details'] ?></span>
+                    </td>
+                </tr>
+                </tbody>
+                <?php endforeach;
+if ($commentdata==null){
+echo 'Ta很懒，暂时没有评论';
+}
+?>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/lightbox-plus-jquery.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+.container {
+    padding-top: 50px;
+}
+
+.nheader {
+    text-align: center;
+}
+
+.commentlist > span {
+    font-size: 25px;
+}
+
+.commentlist table {
+    width: 100%;
+}
+
+.emoji {
+    text-align: center;
+}
+
+.support, .dislike {
+    border-radius: 10px;
+    width: 300px;
+    margin: auto auto;
+    display: inline-block;
+}
+
+.support {
+    border: 1px solid orange;
+}
+
+.dislike {
+    border: 1px solid gray;
+}
+
+.support img, .dislike img {
+    height: 40px;
+    width: 40px;
+}
+
+.support span, .dislike span {
+    font-size: 20px;
+    color: #424141;
+}
+
+.support:hover {
+    background-color: #ffd1be;
+}
+
+.dislike:hover {
+    background-color: rgba(35, 35, 34, 0.4);
+}
+
+.comment button {
+    float: right;
+}
+
+.comment span {
+    font-size: 20px;
+}
+
+.commentlist {
+    margin-top: 30px;
+}
+
+#editor_id {
+    width: auto;
+    height: 100px;
+}
+
+.table tbody td {
+    height: 50px;
+}
+
+.table tbody span {
+    font-size: 15px;
+}
+
+.table thead {
+    background-color: #e7e7e7;
+    font-size: 15px;
+}
+
+.table thead span {
+    line-height: 40px;
+}
+
+#spic {
+    width: 60px;
+    height: 60px;
+}
+
+.img-responsive {
+    margin: auto auto;
+}
+
+#slider {
+    float: right;
+    text-align: right;
+    margin-right: 0px;
+}
+
+#comt {
+    font-size: 20px;
+}
+
+.hr {
+    border-top: 2px solid #428bca;
+}
+
+.ncontent > span {
+    font-size: 20px;
+}

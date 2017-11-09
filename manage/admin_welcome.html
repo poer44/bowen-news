@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="../css/admin_welcome.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="container-fluid">
+    <div class="jumbotron">
+        <h1>欢迎您！管理员<?php echo $admin_id; ?></h1>
+        <p><a class="btn btn-primary btn-lg" role="button" href="../index.php" target="_blank">
+            浏览博闻首页</a>
+        </p>
+    </div>
+    <br>
+    <fieldset>
+        <legend>网站数据</legend>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="ov">
+                    <div class="row">
+                        <div class="col-xs-4">
+                            <img src="../img/ov1.png" class="ovimg">
+                        </div>
+                        <div class="col-xs-8">
+                    <span id="ipv"><script
+                            type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+                    document.write(unescape("%3Cspan id='cnzz_stat_icon_1267987671'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1267987671%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+                    </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="ov"><img src="../img/ov2.png" class="ovimg"><span><?php echo $usercount; ?></span></div>
+            </div>
+            <div class="col-md-3">
+                <div class="ov"><img src="../img/ov3.png" class="ovimg"><span><?php echo $commentcount; ?></span></div>
+            </div>
+            <div class="col-md-3">
+                <div class="ov" id="statediv"><img src="../img/ov4.png" class="ovimg"><span
+                        id="statespan"><?php echo $state; ?></span></div>
+                <input type="hidden" id="state" value="<?php echo $state; ?>">
+            </div>
+        </div>
+    </fieldset>
+    <br>
+    <fieldset>
+        <legend>网站操作</legend>
+        <button class="btn btn-danger" onclick="lock()" id="lock">暂停访问（维护）</button>
+        <button class="btn btn-success" onclick="lock()" id="unlock">恢复访问</button>
+    </fieldset>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/admin_welcome.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>个人中心 - 博闻beta</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/fileinput.min.css" rel="stylesheet">
+    <link href="../css/user_view.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>欢迎您！</h1>
+        <table style="width:100%" id="ust">
+            <tr>
+                <td rowspan="3" id="usp"><img src="<?php echo $data['user_pic']; ?>" class="img-circle" id="userlogo">
+                </td>
+                <td><h2><?php echo $data['user_id']; ?></h2></td>
+            </tr>
+            <tr>
+                <td><span class="text-info">最后登录时间：<?php echo $data['user_lastlogin']; ?></span></td>
+            </tr>
+            <td><span class="text-info">最后登录ip：<?php echo $data['user_ip']; ?></span></td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapseOne">
+                <h3 class="panel-title" style="color:white">
+                    更改头像
+                </h3>
+            </a>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-dismissable" id="changepicmeg">
+                    <button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">
+                        &times;
+                    </button>
+                    修改成功
+                </div>
+                <form id="uploadForm" onsubmit="return false;">
+                    <div class="row">
+                        <div id="imginput">
+                            <input id="input-b1" name="input-b1" type="file" class="file">
+                            <span class="text-danger">保存前请先将图片进行<strong>上传</strong>操作！</span>
+                        </div>
+                        <div id="imgview">
+                            <img class="img-circle view" src="<?php echo $_SESSION['userpic']; ?>"
+                                 style="height: 120px;width: 120px">
+                            <img class="img-circle view" src="<?php echo $_SESSION['userpic']; ?>"
+                                 style="height: 80px;width: 80px">
+                            <img class="img-circle view" src="<?php echo $_SESSION['userpic']; ?>"
+                                 style="height: 40px;width: 40px">
+                            <input type="hidden" id="imgsrc" value="0">
+                            <input type="hidden" id="oldimg" value="<?php echo $_SESSION['userpic']; ?>">
+                            <input type="hidden" id="btnlock" value="0">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <button class="btn btn-success" onclick="doUpload()">保存</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapseTwo">
+                <h3 class="panel-title" style="color:white">
+                    更改密码
+                </h3>
+            </a>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-dismissable" id="tips">
+                    <span id="tipstext">修改成功</span>
+                </div>
+                <form method="post">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <input type="password" id="oldpwd" class="form-control"
+                                       placeholder="原密码"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="newpwd" class="form-control"
+                                       placeholder="新密码"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="password" id="cnewpwd" class="form-control"
+                                       placeholder="确认密码"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <button class="btn btn-success" type="submit" id="pwdbtn">保存</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <a data-toggle="collapse" data-parent="#accordion"
+               href="#collapseThree">
+                <h3 class="panel-title" style="color:white">
+                    评论管理
+                </h3>
+            </a>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+                <div class="alert alert-danger alert-dismissable" id="changecommeg">
+                    <button type="button" class="close" data-dismiss="alert"
+                            aria-hidden="true">
+                        &times;
+                    </button>
+                    删除成功
+                </div>
+                <table class="table">
+                    <?php
+                    $i=0;foreach($commentdata as $vs):
+                    ?>
+                    <thead class="c<?php echo $vs['comment_id'] ?>" style="background-color: #d9edf7">
+                    <tr>
+                        <?php $i++;?>
+                        <td><a href="../newsview.php?id=<?php echo $vs['news_id'] ?>" target="_blank"><span
+                                class="text-info">RE:<?php echo $vs['title'] ?></span></a></td>
+                        <td><span class="text-info"><?php echo $vs['addtime'] ?></span></td>
+                        <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#".$i ?></span></td>
+                        <td>
+                            <?php
+                            $comid=$vs['comment_id'];
+                            $uid=$_SESSION['user_id'];
+                            echo "<a onclick='user_homedel($comid,$uid)'>删除</a>";
+                            ?>
+                        </td>
+                    </tr>
+                    </thead>
+                    <tbody class="c<?php echo $vs['comment_id'] ?>">
+                    <tr>
+                        <td colspan="4">
+                            <span><?php echo $vs['details'] ?></span>
+                        </td>
+                    </tr>
+                    </tbody>
+                    <?php endforeach;
+if ($commentdata==null){
+echo 'Ta很懒，暂时没有评论';
+}
+?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../js/jquery-3.2.1.min.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/delcomment.js"></script>
+<script src="../js/fileinput.min.js"></script>
+<script src="../js/fileinput-zh.js"></script>
+<script src="../js/user_pwdupdate.js"></script>
+<script src="../js/pwdcheck.js"></script>
+<script src="../js/user_home.js"></script>
+</body>
+</html>

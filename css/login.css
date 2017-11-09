@@ -1,0 +1,29 @@
+#logintable {
+    width: 400px;
+    height: auto;
+    margin: 10% auto auto auto;
+    padding: 40px;
+    background-color: white;
+    opacity: 0.8;
+    border-radius: 5px;
+}
+
+table {
+    text-align: center;
+
+}
+
+.logo {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.logo img {
+    width: 180px;
+    height: 80px;
+}
+
+.text-info {
+    font-size: 40px;
+}
