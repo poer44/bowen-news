@@ -64,8 +64,7 @@ if (isset($_SESSION['user_id'])) {
                             </p>
                         </a></li>
                     <li><a href="../message.php" target="_blank"><span id="msg"
-                                                                       class="glyphicon glyphicon-envelope">消息(<?php echo $newmsg; ?>
-                                )</span></a></li>
+                                                                       class="glyphicon glyphicon-envelope">消息(<?php echo $newmsg; ?>)</span></a></li>
                     <li><a href="include/logout.php"><span class="glyphicon glyphicon-off" id="logout">登出</span></a>
                     </li>
                 </ul>

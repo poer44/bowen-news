@@ -8,7 +8,7 @@
 require './include/bowen_pdo.php';
 $lock = new bowen_pdo();
 if ($lock->lock_query() == 1) {
-    require '404.html';
+    require './include/404.html';
     exit;
 }
 ?>
