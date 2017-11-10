@@ -19,7 +19,7 @@
 1. 管理员（改密与登录登出）
 ##【选题思路】##
 自学php希望做基础的网站。今日头条网站等新闻网站存在对pc的排版等不是很友好（新闻点进去排版不统一）、新闻标题党、广告太多等问题。
- ![image](https://github.com/poer44/bowen-news/raw/master/image-folder/4.jpg)
+ ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/4.jpg?raw=true)
 ##【插件】##
 1. FileInput（https://github.com/kartik-v/bootstrap-fileinput）基于Bootstrap的文件上传插件，用于上传新闻图片与上传用户头像。可以有效的识别文件类型与大小并在上传前拦截，用户提示友好。
 1. kindeditor（https://github.com/kindsoft/kindeditor）富文本插件，能有效识别过滤非法的html标签，并且能对格式进行排版与编辑。用户操作体验良好。
@@ -29,9 +29,9 @@
 ##【技术】##
 PHP、mysql、PDO（php官方推荐的数据库连接方式）、bootstrap、jquery、Ajax
 ##【预览】##
- ![image](https://github.com/poer44/bowen-news/raw/master/image-folder/1.jpg)
- ![image](https://github.com/poer44/bowen-news/raw/master/image-folder/2.jpg)
- ![image](https://github.com/poer44/bowen-news/raw/master/image-folder/3.jpg)
+ ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/1.jpg?raw=true)
+ ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/2.jpg?raw=true)
+ ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/3.jpg?raw=true)
 
 
 
