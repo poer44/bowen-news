@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2017-11-09 17:12:05
+Date: 2017-11-12 19:18:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -46,7 +46,7 @@ CREATE TABLE `comment` (
   KEY `user_id` (`user_id`),
   CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`news_id`) REFERENCES `news` (`id`),
   CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`user_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comment
@@ -59,10 +59,10 @@ INSERT INTO `comment` VALUES ('14', '6', '111', '长知识了！', '2017-11-08 1
 INSERT INTO `comment` VALUES ('15', '76', '111', '麦当劳金色拱门形状的标志在西方有个著名的昵称——GoldenArch，直译是“金拱门”。实至名归，哈哈', '2017-11-08 14:33:02');
 INSERT INTO `comment` VALUES ('16', '64', '111', '先涨价，后降价，快递还要找半天，我才不剁', '2017-11-08 14:34:22');
 INSERT INTO `comment` VALUES ('17', '63', '111', '刘海好丑啊，我选择三星s8或者华为', '2017-11-08 14:35:03');
-INSERT INTO `comment` VALUES ('18', '62', '111', '当然是先有的鸡啦！鸡蛋鸡蛋，鸡在前蛋在后', '2017-11-08 14:37:17');
 INSERT INTO `comment` VALUES ('20', '64', '666', '哈哈哈，钱包已经准备好了，就等双十一把购物车清空了', '2017-11-08 14:45:02');
 INSERT INTO `comment` VALUES ('21', '1', '666', '厉害了习大大', '2017-11-08 14:45:41');
 INSERT INTO `comment` VALUES ('22', '76', '666', '麦当劳叔叔要改名金拱门叔叔了吗233333', '2017-11-08 14:48:31');
+INSERT INTO `comment` VALUES ('25', '28', '666', 'fsd // @<a href=user_home.php?id=1>1</a>:dasdas', '2017-11-10 10:07:05');
 
 -- ----------------------------
 -- Table structure for `news`
@@ -97,7 +97,7 @@ INSERT INTO `news` VALUES ('8', '追逐阳光，向伦敦飞去', '我没去过�
 INSERT INTO `news` VALUES ('24', '十九届中央政治局常委同中外记者见面', '央视网消息（新闻联播）：<br />\r\n<div style=\"text-align:center;\">\r\n	<strong>中国共产党第十九届中央委员会第一次全体会议公报</strong>\r\n</div>\r\n<div style=\"text-align:center;\">\r\n	<strong>（2017年10月25日中国共产党第十九届中央委员会第一次全体会议通过）</strong>\r\n</div>\r\n中国共产党第十九届中央委员会第一次全体会议，于2017年10月25日在北京举行。<br />\r\n出席全会的有中央委员204人，候补中央委员172人。中央纪律检查委员会委员列席会议。<br />\r\n习近平同志主持会议并在当选中共中央委员会总书记后作了重要讲话。<br />\r\n全会选举了中央政治局委员、中央政治局常务委员会委员、中央委员会总书记；根据中央政治局常务委员会的提名，通过了中央书记处成员，决定了中央军事委员会组成人员；批准了十九届中央纪律检查委员会第一次全体会议选举产生的书记、副书记和常务委员会委员人选。名单如下：<br />\r\n一、中央政治局委员<br />\r\n（按姓氏笔画为序）<br />\r\n丁薛祥&emsp;习近平&emsp;王晨&emsp;王沪宁&emsp;刘鹤&emsp;许其亮&emsp;孙春兰（女）&emsp;李希&emsp;李强&emsp;李克强&emsp;李鸿忠&emsp;杨洁篪&emsp;杨晓渡&emsp;汪洋&emsp;张又侠&emsp;陈希&emsp;陈全国&emsp;陈敏尔&emsp;赵乐际&emsp;胡春华&emsp;栗战书&emsp;郭声琨&emsp;黄坤明&emsp;韩正&emsp;蔡奇<br />\r\n二、中央政治局常务委员会委员<br />\r\n习近平&emsp;李克强&emsp;栗战书&emsp;汪洋&emsp;王沪宁&emsp;赵乐际&emsp;韩正<br />\r\n三、中央委员会总书记<br />\r\n习近平<br />\r\n四、中央书记处书记<br />\r\n王沪宁&emsp;丁薛祥&emsp;杨晓渡&emsp;陈希&emsp;郭声琨&emsp;黄坤明&emsp;尤权<br />\r\n五、中央军事委员会主席、副主席、委员<br />\r\n主席&emsp;习近平<br />\r\n副主席&emsp;许其亮&emsp;张又侠<br />\r\n委员&emsp;魏凤和&emsp;李作成&emsp;苗华&emsp;张升民<br />\r\n六、中央纪律检查委员会书记、副书记、常务委员会委员<br />\r\n书记&emsp;赵乐际<br />\r\n副书记&emsp;杨晓渡&emsp;张升民&emsp;刘金国&emsp;杨晓超&emsp;李书磊&emsp;徐令义&emsp;肖培&emsp;陈小江<br />\r\n常务委员会委员（按姓氏笔画为序）<br />\r\n王鸿津&emsp;白少康&emsp;刘金国&emsp;李书磊&emsp;杨晓超&emsp;杨晓渡&emsp;肖培&emsp;邹加怡（女）&emsp;张升民&emsp;张春生&emsp;陈小江&emsp;陈超英&emsp;赵乐际&emsp;侯凯&emsp;姜信治&emsp;骆源&emsp;徐令义&emsp;凌激&emsp;崔鹏', '2017-10-27 10:47:04', 'upfiles/news-J3st3SzkLi.jpg', 'admin', '1');
 INSERT INTO `news` VALUES ('26', '5000亿美元！沙特王储宣布要建跨国工商业新城', '【新华社微特稿】沙特阿拉伯王储穆罕默德·本·萨勒曼24日宣布一项投资5000亿美元（约合3.3万亿元人民币）的建城计划。他表示这座现代化新城将成为“全球追梦者之地”。<br />\r\n这座命名为“NEOM”的工商业新城位于沙特西北部，预计占地2.65万平方公里，毗邻红海和亚喀巴湾，靠近经由苏伊士运河的海上贸易航线。新城将聚焦能源与水、生物科技、食品、先进制造业和娱乐业等九大行业，未来完全依靠新型能源供电。<br />\r\n美联社报道，穆罕默德·本·萨勒曼在首都利雅得举行的一场国际商业会议上宣布了这项宏大计划。大会有来自88个国家和地区超过3500人参加。<br />\r\n按照沙特官方媒体阿拉伯电视台的说法，“NEOM”将成为全球首个地跨三国的工商业特区。按照规划，新城位于沙特西北部，地跨邻国埃及和约旦。不过埃及和约旦暂未就这项建城计划置评。<br />\r\n路透社报道，建城资金将来自沙特公共投资基金、沙特政府和国内外私人投资者。沙特政府眼下已与潜在投资者接触，“NEOM”的第一阶段工程预计将在2025年前完成。穆罕默德·本·萨勒曼将任命德国西门子公司和美国铝业公司前首席执行官克劳斯·克莱因费尔德执掌这一项目。<br />\r\n“这个地方不适合传统的人或传统公司，”穆罕默德·本·萨勒曼说。<br />\r\n按照他的说法，苏伊士运河是世界最重要的经济动脉之一，这一战略地位将帮助“NEOM”迅速成为连接亚洲、欧洲和非洲的全球枢纽。到2030年，“NEOM”对沙特国内生产总值（GDP）的贡献预计将达到至少1000亿美元（6642亿元人民币）。<br />\r\n路透社评述，沙特需要巨大的财政和技术资源实现“NEOM”的预想建设规模，不过从以往看，这存在困难。由于政策变化和法律环境受限等原因，私人投资者一般对参与这样的国家项目持谨慎态度。不过，这一项目展现了穆罕默德·本·萨勒曼推动沙特经济的“雄心”。<br />\r\n沙特是世界最大的石油出口国。自2014年国际油价大幅下跌后，沙特石油收入锐减，财政紧张。国王萨勒曼2015年继承王位后，推出一系列经济和社会改革。为了摆脱对石油收入的依赖，沙特去年4月公布“沙特2030愿景”经济改革计划，主要内容包括建立2万亿美元的巨型主权财富基金、出售国家石油公司股权、削减石油补贴和扩大投资。', '2017-10-27 10:54:58', 'upfiles/news-OKxfw6Xjyt.jpg', 'admin', '4');
 INSERT INTO `news` VALUES ('27', '美国宣布对朝鲜进行新一波制裁', '新华社华盛顿10月26日电（记者 朱东阳）美国财政部26日宣布对朝鲜7名人员和3家机构实施制裁，这些人员和机构涉及朝鲜军事安全部门、驻外使领馆和海外企业。<br />\r\n根据相关规定，受到制裁的个人和实体在美国境内的资产将被冻结，美国公民不得与其进行交易。<br />\r\n此前，美国国务院发布一份报告，称上述人员和机构应该对朝鲜“严重的侵犯人权现象”等负责。美国务院表示，上述人员和机构的行为给朝鲜核导开发项目提供了支持。同时，为了给朝鲜政府赚取外汇，每年有数千朝鲜人被送往海外务工。<br />\r\n美财政部近年来多次以参与支持朝鲜核导开发项目等为由制裁朝鲜境内外个人和企业。9月26日，美财政部宣布对参与支持朝鲜发展大规模杀伤性武器的朝鲜8家银行和26名公民实施制裁。', '2017-10-27 11:10:44', 'upfiles/news-50dxqjymlH.jpg', 'admin', '4');
-INSERT INTO `news` VALUES ('28', '博闻正式开通了', '博闻新闻网站于今天正式开通，欢迎大家的访问   ', '2017-11-08 16:39:31', 'upfiles/news-jtJrx3PFIE.jpg', 'admin', '7');
+INSERT INTO `news` VALUES ('28', '博闻正式开通了', '博闻新闻网站于今天正式开通，欢迎大家的访问!', '2017-11-10 10:13:18', 'upfiles/news-jtJrx3PFIE.jpg', 'admin', '7');
 INSERT INTO `news` VALUES ('42', '传奇永不熄虽败犹荣 写在SKT战败后', '&nbsp; &nbsp; &nbsp; SKT三度捧起冠军奖杯未免令赛事的悬念与趣味性有所降低，而早在SKT于S6第三次捧起召唤师杯之时就有不少观众渴望看到一支队伍能终结SKT的王朝，显然SSG就是这样一支万众期待的“弑神者”。在S7决赛的舞台上他们完成了对SKT的复仇，与此同时也宣告着他们终结了SKT长达三年对世界总决赛的统治。<br />\n&emsp;&emsp;<strong>传奇伊始&nbsp;</strong><br />\n&emsp;&emsp;SKT的传奇无疑是伴随着Faker的成长所写就，而Faker也从始至终就是SKT的灵魂或者说是队伍的旗帜，纵使SKT经过一代代的人员更迭，其中有着Marin、Bang这样的强力选手涌现，可SKT始终是那个由Faker支撑并一路走向巅峰的传奇战队。<br />\n&emsp;&emsp;自Faker在S3赛季出道以来，这位司职中单的选手一直都少不了话题的讨论与实力的对比，可他用战绩与表现征服了所有对他怀有不屑、质疑的观众，一个个此前赛场上知名的选手倒在他的面前成为他登临王座的的垫脚石。<br />\n&emsp;&emsp;在Faker登顶王座的时刻，SKT也被这个被称为中路之神的选手带到了一个全新的高度，从首次捧起世界冠军奖杯的那一刻起，SKT这支战队就与Faker这个被神化的选手紧密联系到了一起。<br />\n&emsp;&emsp;S3赛季的两劫之战让Faker封神也将SKT推向世界总决赛的大门，S4赛季Faker一己之力带领颓势尽显的队伍保持上届冠军的尊严，S5赛季一手瑞兹帮助SKT实现复兴，到了S6赛季更为团队的大魔王更是帮助队伍赢下与ROX的关键战役。<br />\n&emsp;&emsp;很难断言说SKT之于Faker究竟是谁成就了谁，但可以知晓的是两者谁也不可或缺，无论彼此缺少了谁都无法达到各自现如今所到达的高度。Faker五年如一日的努力与他的天赋铸就了大魔王的传奇生涯与SKT三冠王的伟业，SKT的知遇之恩与完善的人才选拔、培养体系使得Faker得到表现才能并继续成长的土壤，两者之间可谓是相辅相成。<br />\n&emsp;&emsp;<strong>神话王朝</strong><br />\n&emsp;&emsp;不可否认，SKT取得了前无古人也很难有后来者的成就，他们在共计7届全球总决赛中取得了其中三座冠军，而前两届比赛当时俱乐部尚未成立英雄联盟分部因此可以不计算在内，也就是说他们在建队至今共五届S赛取得了其中三座冠军奖杯。<br />\n&emsp;&emsp;在此之前从未有人能拿到两座S赛的冠军，而SKT不仅做到了而且还做出了超越，赛事举办至今有接近半数的冠军被SKT所揽获，这样的成绩足以侧面看出SKT的实力与斐然的成就。<br />\n&emsp;&emsp;纵使SKT的选手、人员在一代代更迭，可不改的是SKT一直作为世界最强战队，作为标杆矗立于世界之巅。流水的SKT，铁打的Faker，LOL显然是一个强调团队配合的游戏，可Faker在SKT的作用与地位还是显而易见——尤其是在这届S7结束以后，所有人都清楚的认知到了Faker在这支SKT中有多么重要。<br />\n&emsp;&emsp;在英雄联盟历史上，SKT已经是一个无法不被提及的战队，每每论及世界最强战队的讨论时SKT总会是话题的中心，而人们所讨论的也大多是谁能挑战到SKT霸主的地位。几近被神化的战队，SKT开创了自己的王朝且让队伍一直保持活力，作为世界赛场上的常青树一直活跃在各大国际赛事中。<br />\n&emsp;&emsp;有SKT参与的比赛他们永远是夺冠呼声最高的队伍，在他们的王座之下有着无数挑战者的尸骨堆砌，而SKT则一直坐在王座等待下一位挑战者的到来，所有人都在期待着一支战队能打破SKT的统治，将SKT拉下神坛。<br />\n&emsp;&emsp;<strong>传奇也将落幕</strong><br />\n&emsp;&emsp;所有人都知道再传奇的战队也将有着落幕的一天，但很多人不会想到这一天这么快就已经到来。SSG的回归世界总决赛且再度杀入决赛，但依旧无人看好他们能够战胜SKT，可他们却真的做到了击败这个在世界总决赛上此前未尝败绩的SKT。<br />\n&emsp;&emsp;在赛后Faker抱头痛哭的一幕令许多即使不喜SKT的观众与粉丝也感到有些伤感，作为一位选手，他在这场比赛中竭尽所能做了一位中单所能做的一切，但依旧难改败局。<br />\n&emsp;&emsp;不过也有着许多的观众欣喜看到SKT陨落的一幕，毕竟SKT已经统治了国际赛事太久太久，人们期待看到一支不同的战队出现在视野中带给观众足够的新鲜感与期待值。SKT的粉丝也不必为此惋惜，因为未来的时代SKT不会沦为配角，在即将到来的新时代中将会是群雄并起的一个赛季，相信届时的比赛会更加精彩和令人期待。', '2017-11-08 14:23:19', 'upfiles/news-csvrYEJUS4.jpg', 'admin', '6');
 INSERT INTO `news` VALUES ('43', '发售仅三天iPhone X跌破官网价 或因供过于求', '“对，X也破发了。”11月4日，就在苹果iPhone X正式发售的第二天，一位黄牛告诉新京报记者，渠道商的报价已经跌破官网价格，银色iPhone X(64GB)报价8150元，低于官网价格150余元，更是比刚刚发售时的黄牛价暴跌1600余元。业内专家认为，降价的直接原因就是“供过于求”。<br />\n黄牛价三天跌千余元<br />\n继iPhone 8在发售一小时就跌破发售价后，苹果把希望都寄托在了iPhone X身上。但iPhone X的价格也并不坚挺。<br />\n11月4日，新京报记者发现，在各大电商平台上的第三方商家给出的银色iPhone X（64GB）报价为8228元，已低于发售价格。<br />\n5日，一名渠道商通过微信将报价发给了记者，其中iPhone X(64GB)黑色售价8450元，白色售价 8150元，256GB版本黑色售价9750元，白色售价9650元。<br />\n可以看到，iPhone X正式发售第二天，64GB银色版的黄牛价格就已下跌1500余元，256GB黑色版本下跌450余元。从报价上来看，256GB版本的iPhone X比64GB需求更大，黑色版明显要比白色更加好卖。<br />\n值得注意的是，相比三天前刚刚发售时，黄牛也均有不同幅度的降价。<br />\n在11月3日iPhone X正式发售后，新京报记者第一时间得到的黄牛价格显示，iPhone X（64GB）黑色售价9900元，白色售价9700元，256GB版本黑色售价11200元，白色售价11000元。<br />\n“今年现货比较充足，”一位黄牛向记者解释，iPhone X售价破发的原因，除了苹果货源较为充足以外，中国消费者在手机消费上也逐渐趋于理性，较高的售价把不少消费者挡在了门外。<br />\n也有声音指出，全面屏手机正面边框均为黑色，这也使得消费者更倾向于购买更具整体感的黑色版本。<br />\n分析师：iPhone X不足以让苹果重回巅峰&nbsp;<br />\n“目前断言X失败为时过早，”独立IT分析师唐欣称，即使破发，iPhoneX也是史上最贵，利润最高的手机。“目前看销量尽管无法和iPhone4至6s这几代相提并论，但基本还是符合预期的。”<br />\n数据显示，从国行版iPhone X在各大电商平台以及苹果官网的销售情况来看，在其预购开始的5小时后，其销量就达到了550万部之多。苹果也宣布，iPhone X预订量已经“打破了历史纪录”。<br />\n11月3日，苹果公司发布2017年第四财季财报，本财季营收为525.79亿美元，同比增长12%，净利润为107.14亿美元，同比增长19%。大中华区营收为98.01亿美元，比去年同期的87.85亿美元增长12%，止住了此前连续6个季度下滑的颓势。苹果公司管理层预计，iPhone X的发布将推动该公司迎来有史以来“利润最高的季度”。<br />\n根据市场调研机构 Canalys的数据，2017年第三季度，苹果在中国市场的出货量达到了1100万部，而去年同期仅卖出了800万部，比去年同期增长了近40%。iPhone X高配版接近万元的售价，它极大满足了苹果的利润诉求。<br />\n唐欣称，iPhone 7和8的低迷已经对苹果业绩带来很大压力。对于iPhone X，业界也一直是谨慎乐观。就业绩来讲，iPhone X还是会比过去两代产品带来更多的利润和收入，“但我不认为它足以带苹果重回过去的巅峰。”', '2017-11-08 14:22:17', 'upfiles/news-z52xpqZIYP.jpg', 'admin', '2');
 INSERT INTO `news` VALUES ('44', '“一箭双星”发射成功 我国北斗导航进入全球组网时代！', '&nbsp; &nbsp; 11月5日19时45分，我国在西昌卫星发射中心用长征三号乙运载火箭，<strong>以“一箭双星”方式成功发射第二十四、二十五颗北斗导航卫星</strong>。这两颗卫星属于中圆地球轨道卫星，是我国北斗三号第一、二颗组网卫星，<strong>开启了北斗卫星导航系统全球组网的新时代</strong>。<br />\n&nbsp; &nbsp; 卫星入轨后，经测试及入网验证，可对外提供服务。北斗三号全球组网卫星首次发射，将稳步推动北斗三号系统建设，加快北斗系统尽早服务全球，造福全人类。北斗三号卫星将增加性能更优的互操作信号，在进一步提高基本导航服务能力基础上，按照国际标准提供星基增强服务及搜索救援服务。同时，还将采用更高性能的铷原子钟和氢原子钟。<strong>北斗三号在北斗二号性能的基础上，将进一步提升1至2倍的定位精度，达到2.5米—5米的水平，在保留北斗二号短报文功能的前提下，提升相关性能</strong>。<br />\n&nbsp; &nbsp; 据介绍，2009年北斗三号工程正式启动建设。在各大系统和众多参研参试单位共同努力下，我国全面突破系统核心关键技术，完成地面验证，卫星状态基本固化。特别是2015至2016年成功发射5颗新一代导航卫星，完成了在轨验证。<br />\n&nbsp; &nbsp; 从此次任务起，我国迎来新一轮北斗组网卫星高密度发射。2018年前后，将发射18颗北斗三号组网卫星，覆盖“一带一路”沿线国家；2020年左右，将完成30多颗组网卫星发射，实现全球服务能力。<br />\n此次发射的北斗导航卫星和配套运载火箭由中国航天科技集团公司所属的中国空间技术研究院和中国运载火箭技术研究院分别研制，这是长征系列运载火箭的第253次飞行。', '2017-11-06 13:57:48', 'upfiles/news-rPNnfQLeed.jpg', 'admin', '1');
@@ -161,13 +161,14 @@ CREATE TABLE `reply_comment` (
   KEY `recev_user` (`recev_user`),
   KEY `send_user_2` (`send_user`,`recev_user`),
   CONSTRAINT `reply_comment_ibfk_1` FOREIGN KEY (`reply_commentid`) REFERENCES `comment` (`comment_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of reply_comment
 -- ----------------------------
 INSERT INTO `reply_comment` VALUES ('111', 'Poer', '0', '11', '2017-11-08 14:26:17', '4');
 INSERT INTO `reply_comment` VALUES ('666', '111', '0', '21', '2017-11-08 14:45:41', '5');
+INSERT INTO `reply_comment` VALUES ('666', '1', '1', '25', '2017-11-10 10:07:21', '6');
 
 -- ----------------------------
 -- Table structure for `sort`
@@ -231,7 +232,7 @@ INSERT INTO `support` VALUES ('8', '0', '0', '{\"like\":[],\"hate\":[]}');
 INSERT INTO `support` VALUES ('24', '0', '0', '{\"like\":[],\"hate\":[]}');
 INSERT INTO `support` VALUES ('26', '0', '0', '{\"like\":[],\"hate\":[]}');
 INSERT INTO `support` VALUES ('27', '0', '0', '{\"like\":[],\"hate\":[]}');
-INSERT INTO `support` VALUES ('28', '0', '0', '{\"like\":[],\"hate\":[]}');
+INSERT INTO `support` VALUES ('28', '1', '0', '{\"like\":[\"1\"],\"hate\":[]}');
 INSERT INTO `support` VALUES ('42', '0', '0', '{\"like\": [],\"hate\":[]}');
 INSERT INTO `support` VALUES ('43', '0', '0', '{\"like\": [],\"hate\":[]}');
 INSERT INTO `support` VALUES ('44', '1', '0', '{\"like\":[\"111\"],\"hate\":[]}');
@@ -294,21 +295,16 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('1', 'c4ca4238a0b923820dcc509a6f75849b', 'user_pic/user-rIdd04XkrK.jpg', '::1', '2017-11-10 10:10:45');
 INSERT INTO `user` VALUES ('111', '698d51a19d8a121ce581499d7b701668', 'user_pic/user-jzEQhGp6tv.jpg', '::1', '2017-11-08 14:31:21');
-INSERT INTO `user` VALUES ('666', 'fae0b27c451c728867a567e8c1bb4e53', 'user_pic/user_default.png', '::1', '2017-11-08 15:50:35');
+INSERT INTO `user` VALUES ('666', 'fae0b27c451c728867a567e8c1bb4e53', 'user_pic/user_default.png', '::1', '2017-11-10 10:07:01');
 INSERT INTO `user` VALUES ('Poer', '2dbe58177aecc493f3e97feb59b25989', 'user_pic/user-Q7d5RtCgXL.jpg', '192.168.191.2', '2017-11-08 16:31:14');
 
 -- ----------------------------
 -- View structure for `comment_title`
 -- ----------------------------
 DROP VIEW IF EXISTS `comment_title`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `comment_title` AS select `comment_userpic`.`comment_id` AS `comment_id`,`comment_userpic`.`news_id` AS `news_id`,`comment_userpic`.`user_id` AS `user_id`,`comment_userpic`.`details` AS `details`,`comment_userpic`.`addtime` AS `addtime`,`comment_userpic`.`user_pic` AS `user_pic`,`news`.`title` AS `title` from (`comment_userpic` join `news`) where (`comment_userpic`.`news_id` = `news`.`id`) ;
-
--- ----------------------------
--- View structure for `comment_userpic`
--- ----------------------------
-DROP VIEW IF EXISTS `comment_userpic`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `comment_userpic` AS select `comment`.`comment_id` AS `comment_id`,`comment`.`news_id` AS `news_id`,`comment`.`user_id` AS `user_id`,`comment`.`details` AS `details`,`comment`.`addtime` AS `addtime`,`user`.`user_pic` AS `user_pic` from (`comment` join `user`) where (`comment`.`user_id` = `user`.`user_id`) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `comment_title` AS select `comment`.`comment_id` AS `comment_id`,`comment`.`news_id` AS `news_id`,`comment`.`user_id` AS `user_id`,`comment`.`details` AS `details`,`comment`.`addtime` AS `addtime`,`user`.`user_pic` AS `user_pic`,`news`.`title` AS `title` from ((`comment` join `user`) join `news`) where ((`comment`.`user_id` = `user`.`user_id`) and (`comment`.`news_id` = `news`.`id`)) ;
 
 -- ----------------------------
 -- View structure for `news_all`
