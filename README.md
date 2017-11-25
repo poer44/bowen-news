@@ -27,7 +27,7 @@
 1. lightbox2（<https://github.com/lokesh/lightbox2>）新闻图片&用户图片的点击浏览放大
 1. slideunlock（<https://github.com/dyh1995/jquery.slideunlock.js>）用于登录界面与评论提交的滑动解锁，防止机器提交
 ## 【技术】 ##
-PHP、mysql、PDO（php官方推荐的数据库连接方式）、bootstrap、jquery、Ajax
+**PHP、mysql、PDO（php官方推荐的数据库连接方式）、bootstrap、jquery、Ajax**
 ## 【预览】 ##
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/1.jpg?raw=true)
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/2.jpg?raw=true)
@@ -41,9 +41,7 @@ PHP、mysql、PDO（php官方推荐的数据库连接方式）、bootstrap、jqu
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/11.jpg?raw=true)
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/12.jpg?raw=true)
   ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/13.jpg?raw=true)
-
- 
-
-
-
-
+## 数据库E-R ##
+  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/ER.png?raw=true)
+## 写在最后 ##
+想折腾PHP开的坑，结果发现学到的js的东西比php还多，比如第一次接触到了ajax。实际填坑的时候还是有很多难点（比如一个点赞功能就要到考虑用户点赞状态的记录，多个界面点赞状态的同步等），实际解决掉还是挺开心的。另：体验了一把世界上最好的语言（笑）
