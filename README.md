@@ -32,7 +32,6 @@ PHP、mysql、PDO（php官方推荐的数据库连接方式）、bootstrap、jqu
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/1.jpg?raw=true)
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/2.jpg?raw=true)
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/3.jpg?raw=true)
-  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/4.jpg?raw=true)
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/5.jpg?raw=true)
  ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/6.jpg?raw=true)
   ![image](https://github.com/poer44/bowen-news/blob/master/raw/master/image-folder/7.jpg?raw=true)
