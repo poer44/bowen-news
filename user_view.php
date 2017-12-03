@@ -15,17 +15,25 @@ if ($_GET) {
     if ($id != null) {
         $a = new bowen_pdo();
         $userinfo = $a->user_query(array($id));
-        if (empty($userinfo)) {
-            require './500.html';
-        } else {
-            //取得评论信息
-            $commentdata = $a->usercomment_query("user", array($id));
-            require './include/user_view.html';
-            include './include/nav.php';
-        }
+            if (empty($userinfo)) {
+                require './500.html';
+            } else {
+                //取得评论信息
+                $commentdata = $a->usercomment_query("user",array($id));
+                //取得讨论列表
+                $tidlist=array();
+                $talkidlist = $a->talknews_query("idlist",null);
+                foreach($talkidlist as $k=>$v){
+                    array_push($tidlist,$v["id"]);
+                }
+                require './include/user_view.html';
+                include './include/nav.php';
+            }
     } else {
         require './500.html';
     }
+
+
 } else {
     require './500.html';
 }

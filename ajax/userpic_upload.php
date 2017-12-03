@@ -24,7 +24,7 @@ if ($_POST) {
         if (is_uploaded_file($_FILES['input-b1']['tmp_name'])) {
             echo "{\"imgsrc\":\"\"}";
         } else {
-            $uploadfile = substr($uploadfile, 3);
+            $uploadfile=substr($uploadfile,3);
             echo "{\"imgsrc\":\"$uploadfile\"}";
         }
     }

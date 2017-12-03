@@ -21,11 +21,10 @@ $("#input-b1").on("fileuploaded", function (event, data, previewId, index) {
     $.each(data.response, function () {
         $('.view').attr("src", this);
         $('#imgsrc').val(this);
-    });
+    })
     $("#imginput").hide();
     $("#imgview").show();
-});
-
+})
 function doUpload() {
     var lock = $('#btnlock').val();
     if (lock == '0') {

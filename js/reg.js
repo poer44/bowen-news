@@ -110,7 +110,6 @@ function reg() {
         })
     }
 }
-
 function reglogin() {
     var id = $('#idinput').val();
     var pwd = $('#pwdinput').val();

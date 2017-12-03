@@ -7,12 +7,12 @@
  */
 require './admin_session_check.php';
 require '../include/bowen_pdo.php';
-$a = new bowen_pdo();
-$id = $_GET['id'];
+$a=new bowen_pdo();
+$id=$_GET['id'];
 //删除用户照片
-$picload = $a->user_query(array($id));
-if ($picload['user_pic'] != "user_pic/user_default.png") {
-    $picload = '../' . $picload['user_pic'];
+$picload=$a->user_query(array($id));
+if($picload['user_pic']!="user_pic/user_default.png") {
+    $picload='../'.$picload['user_pic'];
     unlink($picload);
 }
 //删除用户

@@ -7,7 +7,7 @@
  */
 require './admin_session_check.php';
 require('../include/bowen_pdo.php');
-$a = new bowen_pdo();
-$arr = $a->sort_query("all", null);
+$a=new bowen_pdo();
+$arr=$a->sort_query("all",null);
 require('./admin_addnews.html');
 ?>

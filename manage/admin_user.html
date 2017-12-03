@@ -24,8 +24,7 @@
                 <tbody>
                 <?php foreach($data as $v):?>
                 <tr>
-                    <td><input type="checkbox" name="id[]" value="<?php echo $v['user_id'];?>"/><a
-                            href="user_home.php?id=<?php echo $v['user_id'];?>"><span
+                    <td><input type="checkbox" name="id[]" value="<?php echo $v['user_id'];?>"/><a href="user_home.php?id=<?php echo $v['user_id'];?>"><span
                             style="color: black"><?php echo $v['user_id'];?></span></a></td>
                     <td><span class="glyphicon glyphicon-time"></span><?php echo $v['user_ip'];?></td>
                     <td><span class="glyphicon glyphicon-time"></span><?php echo $v['user_lastlogin'];?></td>

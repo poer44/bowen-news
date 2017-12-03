@@ -15,6 +15,12 @@ if ($_GET) {
         $userinfo['user_pic'] = '../' . $userinfo['user_pic'];
         //取得评论信息
         $commentdata = $a->usercomment_query("user", array($id));
-        require '../include/user_view.html';
+        //取得讨论列表
+        $tidlist=array();
+        $talkidlist = $a->talknews_query("idlist",null);
+        foreach($talkidlist as $k=>$v){
+            array_push($tidlist,$v["id"]);
+        }
+        require 'admin_userview.html';
     }
 }

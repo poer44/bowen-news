@@ -9,7 +9,7 @@ require '../include/bowen_pdo.php';
 if ($_POST) {
     $id = $_POST['id'];
     $pwd = md5($_POST['pwd']);
-    $a = new bowen_pdo();
+    $a=new bowen_pdo();
     $stmt = $a->user_query(array($id));
     if ($stmt == null) {
         echo 'querynull';
@@ -19,10 +19,10 @@ if ($_POST) {
                 session_start();
             }
             $reIP = $_SERVER["REMOTE_ADDR"];
-            $a->user_update("ip", array('0', $id));//更新时间
-            $a->user_update("ip", array($reIP, $id));
+            $a->user_update("ip",array('0',$id));//更新时间
+            $a->user_update("ip",array($reIP,$id));
             $_SESSION['user_id'] = $id;
-            $_SESSION['userpic'] = $stmt['user_pic'];
+            $_SESSION['userpic']=$stmt['user_pic'];
             echo 'success';
         } else {
             echo 'pwderror';

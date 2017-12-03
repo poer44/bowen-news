@@ -11,7 +11,7 @@ if ($_GET) {
         session_start();
     }
     if (!isset($_SESSION['user_id'])) {
-        $_SESSION['user_id'] = null;
+        $_SESSION['user_id']=null;
     }
     $id = isset($_GET['id']) ? $_GET['id'] : null;
     if ($id != null) {
@@ -20,7 +20,13 @@ if ($_GET) {
             $a = new bowen_pdo();
             $data = $a->user_query(array($id));
             //取得评论信息
-            $commentdata = $a->usercomment_query("user", array($id));
+            $commentdata = $a->usercomment_query("user",array($id));
+            //取得讨论列表
+            $tidlist=array();
+            $talkidlist = $a->talknews_query("idlist",null);
+            foreach($talkidlist as $k=>$v){
+                array_push($tidlist,$v["id"]);
+            }
             require './include/user_home.html';
             include './include/nav.php';
         } //判断用户。如果本人跳个人中心页，非本人跳个人信息页

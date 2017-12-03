@@ -32,16 +32,11 @@
 <div id="mid">
     <div id="left" style="background-color: black;opacity: 0.8">
         <ul class="nav nav-pills nav-stacked">
-            <li class="active"><a href="admin_welcome.php" target="rightifrane"><span
-                            class="glyphicon glyphicon-file"></span>欢迎界面</a></li>
-            <li><a href="admin_newsmanage.php?p=1" target="rightifrane"><span
-                            class="glyphicon glyphicon-file">新闻管理</span></a></li>
-            <li><a href="admin_talklist.php?p=1" target="rightifrane"><span class="glyphicon glyphicon-file">讨论管理</span></a>
-            </li>
-            <li><a href="admin_comment.php" target="rightifrane"><span class="glyphicon glyphicon-file">评论管理</span></a>
-            </li>
-            <li><a href="admin_user.php?p=1" target="rightifrane"><span class="glyphicon glyphicon-file"></span>用户管理</a>
-            </li>
+            <li class="active"><a href="admin_welcome.php" target="rightifrane"><span class="glyphicon glyphicon-file"></span>欢迎界面</a></li>
+            <li><a href="admin_newsmanage.php?p=1" target="rightifrane"><span class="glyphicon glyphicon-file">新闻管理</span></a></li>
+            <li><a href="admin_talklist.php?p=1" target="rightifrane"><span class="glyphicon glyphicon-file">讨论管理</span></a></li>
+            <li><a href="admin_comment.php" target="rightifrane"><span class="glyphicon glyphicon-file">评论管理</span></a></li>
+            <li><a href="admin_user.php?p=1" target="rightifrane"><span class="glyphicon glyphicon-file"></span>用户管理</a></li>
         </ul>
     </div>
     <div id="right">

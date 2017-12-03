@@ -10,8 +10,8 @@ if (!isset($_SESSION)) {
 }
 if (isset($_SESSION['user_id'])) {
     $ui = $_SESSION['user_id'];
-    $a = new bowen_pdo();
-    $newmsg = $a->replycount_query(array($ui, '0'));
+    $a=new bowen_pdo();
+    $newmsg =$a->replycount_query(array($ui,'0'));
 }
 ?>
 <!DOCTYPE html>
@@ -63,10 +63,9 @@ if (isset($_SESSION['user_id'])) {
                                                                        class="img-circle"><?php echo $_SESSION['user_id'] ?>
                             </p>
                         </a></li>
-                    <li><a href="../message.php" target="_blank"><span id="msg"
+                    <li><a href="../message.php"><span id="msg"
                                                                        class="glyphicon glyphicon-envelope">消息(<?php echo $newmsg; ?>)</span></a></li>
-                    <li><a href="include/logout.php"><span class="glyphicon glyphicon-off" id="logout">登出</span></a>
-                    </li>
+                    <li><a href="include/logout.php"><span class="glyphicon glyphicon-off" id="logout">登出</span></a></li>
                 </ul>
                 <input type="hidden" value="<?php echo $_SESSION['user_id'] ?>" id="uid">
                 <?php

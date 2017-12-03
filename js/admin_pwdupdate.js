@@ -17,7 +17,7 @@ function admin_pwdupdate() {
         $("#tipstext").html("<strong>警告：</strong>请输入确认密码");
         $('#tips').show();
     }
-    else if ($('#newpwd').val() != $('#cnewpwd').val()) {
+    else if($('#newpwd').val()!=$('#cnewpwd').val()){
         $('#tips').removeClass("alert-success alert-danger");
         $('#tips').addClass("alert-warning");
         $("#tipstext").html("<strong>警告：</strong>两次密码输入不一致");

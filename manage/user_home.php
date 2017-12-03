@@ -6,7 +6,7 @@
  * Time: 上午 11:06
  */
 if ($_GET) {
-    $id = $_GET['id'];
+    $id=$_GET['id'];
     $url = './user_view.php?id=' . $id;
     echo "<script>window.location.href=\"$url\";</script>";
 }

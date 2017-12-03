@@ -84,7 +84,7 @@ if ($_GET) {
                             <ul class="pagination">
                                 <?php if (($p - 1) != 0) { ?>
                                     <li><a href="talk_view.php?sort_id=<?php echo $sid ?>&p=<?php echo $p - 1; ?>"><span
-                                                    class="glyphicon glyphicon-chevron-left"></span></a></li>
+                                                class="glyphicon glyphicon-chevron-left"></span></a></li>
                                 <?php } else { ?>
                                     <li class="disabled"><span class="glyphicon glyphicon-chevron-left"></span></li>
                                 <?php } ?>
@@ -95,7 +95,7 @@ if ($_GET) {
                                 <?php } ?>
                                 <?php if ($p != $page) { ?>
                                     <li><a href="talk_view.php?sort_id=<?php echo $sid ?>&p=<?php echo $p + 1; ?>"><span
-                                                    class="glyphicon glyphicon-chevron-right"></span></a></li>
+                                                class="glyphicon glyphicon-chevron-right"></span></a></li>
                                 <?php } else { ?>
                                     <li class="disabled"><span class="glyphicon glyphicon-chevron-right"></span></li>
                                 <?php } ?>

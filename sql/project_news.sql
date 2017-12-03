@@ -1,22 +1,22 @@
-/*
+﻿/*
 Navicat MySQL Data Transfer
 
 Source Server         : 1
-Source Server Version : 50547
+Source Server Version : 100125
 Source Host           : localhost:3306
 Source Database       : project_news
 
 Target Server Type    : MYSQL
-Target Server Version : 50547
+Target Server Version : 100125
 File Encoding         : 65001
 
-Date: 2017-11-12 19:18:12
+Date: 2017-12-03 16:56:56
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `admin`
+-- Table structure for admin
 -- ----------------------------
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
@@ -32,7 +32,7 @@ INSERT INTO `admin` VALUES ('admin', '21232f297a57a5a743894a0e4a801fc3');
 INSERT INTO `admin` VALUES ('root', '63a9f0ea7bb98050796b649e85481845');
 
 -- ----------------------------
--- Table structure for `comment`
+-- Table structure for comment
 -- ----------------------------
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
@@ -62,10 +62,9 @@ INSERT INTO `comment` VALUES ('17', '63', '111', '刘海好丑啊，我选择三
 INSERT INTO `comment` VALUES ('20', '64', '666', '哈哈哈，钱包已经准备好了，就等双十一把购物车清空了', '2017-11-08 14:45:02');
 INSERT INTO `comment` VALUES ('21', '1', '666', '厉害了习大大', '2017-11-08 14:45:41');
 INSERT INTO `comment` VALUES ('22', '76', '666', '麦当劳叔叔要改名金拱门叔叔了吗233333', '2017-11-08 14:48:31');
-INSERT INTO `comment` VALUES ('25', '28', '666', 'fsd // @<a href=user_home.php?id=1>1</a>:dasdas', '2017-11-10 10:07:05');
 
 -- ----------------------------
--- Table structure for `news`
+-- Table structure for news
 -- ----------------------------
 DROP TABLE IF EXISTS `news`;
 CREATE TABLE `news` (
@@ -145,12 +144,12 @@ INSERT INTO `news` VALUES ('104', '霍金：人类必须在600年内离开地球
 INSERT INTO `news` VALUES ('105', '叙利亚宣布加入巴黎协定 美国真成“孤家寡人”了', '今年10月，中美洲国家尼加拉瓜正式签署《巴黎协定》后，全球就只剩美国和叙利亚两国不支持这项国际气候协议。可是如今，连常年战乱的叙利亚也准备加入《巴黎协定》，留下美国成了孤家寡人。<br />\n<br />\n据美国有线电视新闻网（CNN）当地时间11月7日报道，在当地时间周二（7日）在德国波恩举行的联合国气候变化会议（COP23）上，叙利亚政府官员宣布他们有意签署《巴黎协定》。此举表示，在《巴黎协定》的立场上，美国将成为唯一的反对者。<br />\n<br />\n在当地时间7日的会议上，叙利亚地方行政和环境副部长M.Wadah Katmawi说：“我确定，阿拉伯叙利亚共和国支持巴黎气候变化协议,和所有签约国一样，致力于达到此协议想达到的全球目标，这反映了正义和责任的原则。”他还表示，发达国家“作为气候变化最初的造成者，应该承担他们的法律和人道主义责任”，向发展中国家提供技术和经济支持，来帮助他们与气候变化斗争。<br />\n<br />\n根据叙利亚官方媒体SANA，上个月，叙利亚人民议会投票决定加入《巴黎协定》。<br />\n<br />\n此前，叙利亚因为深陷内战，而没有出席2015年的巴黎气候变化大会。早前，在全球197个国家中，《巴黎协定》已经对147个国家生效。另有48个签约国尚待国内批准协定，只有尼加拉瓜与叙利亚两个国家没有在公约上签字。<br />\n而今年6月1日，特朗普宣布美国退出巴黎协定，加入尼加拉瓜与叙利亚的“阵营”。特朗普曾在6月表示：“我们退出。并且我们会开始重新谈判来看是否有更好的协议。如果有，那很好。但如果不行，那就这样。”<br />\n可是事情在今年10月发生反转，尼加拉瓜一改反对立场，宣布加入《巴黎协定》，自愿承诺减少温室气体排放。此后，与美国站在同一立场的就只剩叙利亚。<br />\n<br />\n可是情况再度反转，如今，深陷内战、四分五裂的叙利亚也将同意加入《巴黎协定》。<br />\n<br />\n相反，在当地时间周一（6日）的联合国气候变化会议上，美国代表重申,“美国政府的立场没有变化”，美国将退出，除非协议条款的重新谈判结果“更有利于美国人民”。但据CNN，重新谈判似乎希望并不大。法国、意大利和德国领导人都认为美国不能单方面地就协议进行重新谈判。联合国方面也表示“不能根据一个政党的要求就重新谈判”。<br />\n如今，美国在《巴黎协定》的立场上真的成了孤家寡人，尽管根据欧洲委员会的数据，2015年，美国就排放了510万吨的二氧化碳，超过所有28个欧盟国家的总和，几乎占全球排放总量的六分之一。叙利亚宣布加入后，美国弗吉尼亚州民主党参议员，曾任弗吉尼亚州州长、民主党主席的蒂姆·凯恩在推特表示，“美国第一”成了“美国最后”。<br />', '2017-11-08 14:19:37', 'upfiles/news-P2loJVOlPZ.jpg', 'admin', '4');
 
 -- ----------------------------
--- Table structure for `reply_comment`
+-- Table structure for reply_comment
 -- ----------------------------
 DROP TABLE IF EXISTS `reply_comment`;
 CREATE TABLE `reply_comment` (
-  `send_user` varchar(32) CHARACTER SET latin1 NOT NULL,
-  `recev_user` varchar(32) CHARACTER SET latin1 NOT NULL,
+  `send_user` varchar(32) NOT NULL,
+  `recev_user` varchar(32) NOT NULL,
   `read` int(11) NOT NULL,
   `reply_commentid` int(11) NOT NULL,
   `addtime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
@@ -168,10 +167,9 @@ CREATE TABLE `reply_comment` (
 -- ----------------------------
 INSERT INTO `reply_comment` VALUES ('111', 'Poer', '0', '11', '2017-11-08 14:26:17', '4');
 INSERT INTO `reply_comment` VALUES ('666', '111', '0', '21', '2017-11-08 14:45:41', '5');
-INSERT INTO `reply_comment` VALUES ('666', '1', '1', '25', '2017-11-10 10:07:21', '6');
 
 -- ----------------------------
--- Table structure for `sort`
+-- Table structure for sort
 -- ----------------------------
 DROP TABLE IF EXISTS `sort`;
 CREATE TABLE `sort` (
@@ -193,7 +191,7 @@ INSERT INTO `sort` VALUES ('7', 'banner');
 INSERT INTO `sort` VALUES ('8', '讨论');
 
 -- ----------------------------
--- Table structure for `state`
+-- Table structure for state
 -- ----------------------------
 DROP TABLE IF EXISTS `state`;
 CREATE TABLE `state` (
@@ -206,7 +204,7 @@ CREATE TABLE `state` (
 INSERT INTO `state` VALUES ('0');
 
 -- ----------------------------
--- Table structure for `support`
+-- Table structure for support
 -- ----------------------------
 DROP TABLE IF EXISTS `support`;
 CREATE TABLE `support` (
@@ -280,7 +278,7 @@ INSERT INTO `support` VALUES ('104', '0', '0', '{\"like\": [],\"hate\":[]}');
 INSERT INTO `support` VALUES ('105', '0', '0', '{\"like\": [],\"hate\":[]}');
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for user
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
@@ -297,38 +295,43 @@ CREATE TABLE `user` (
 -- ----------------------------
 INSERT INTO `user` VALUES ('1', 'c4ca4238a0b923820dcc509a6f75849b', 'user_pic/user-rIdd04XkrK.jpg', '::1', '2017-11-10 10:10:45');
 INSERT INTO `user` VALUES ('111', '698d51a19d8a121ce581499d7b701668', 'user_pic/user-jzEQhGp6tv.jpg', '::1', '2017-11-08 14:31:21');
-INSERT INTO `user` VALUES ('666', 'fae0b27c451c728867a567e8c1bb4e53', 'user_pic/user_default.png', '::1', '2017-11-10 10:07:01');
+INSERT INTO `user` VALUES ('666', 'fae0b27c451c728867a567e8c1bb4e53', 'user_pic/user_default.png', '::1', '2017-12-03 16:56:23');
 INSERT INTO `user` VALUES ('Poer', '2dbe58177aecc493f3e97feb59b25989', 'user_pic/user-Q7d5RtCgXL.jpg', '192.168.191.2', '2017-11-08 16:31:14');
+INSERT INTO `user` VALUES ('测试', 'e10adc3949ba59abbe56e057f20f883e', 'user_pic/user_default.png', '::1', '2017-12-03 16:52:54');
 
 -- ----------------------------
--- View structure for `comment_title`
+-- View structure for comment_title
 -- ----------------------------
 DROP VIEW IF EXISTS `comment_title`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `comment_title` AS select `comment`.`comment_id` AS `comment_id`,`comment`.`news_id` AS `news_id`,`comment`.`user_id` AS `user_id`,`comment`.`details` AS `details`,`comment`.`addtime` AS `addtime`,`user`.`user_pic` AS `user_pic`,`news`.`title` AS `title` from ((`comment` join `user`) join `news`) where ((`comment`.`user_id` = `user`.`user_id`) and (`comment`.`news_id` = `news`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `comment_title` AS select `comment`.`comment_id` AS `comment_id`,`comment`.`news_id` AS `news_id`,`comment`.`user_id` AS `user_id`,`comment`.`details` AS `details`,`comment`.`addtime` AS `addtime`,`user`.`user_pic` AS `user_pic`,`news`.`title` AS `title` from ((`comment` join `user`) join `news`) where ((`comment`.`user_id` = `user`.`user_id`) and (`comment`.`news_id` = `news`.`id`)) ;
+
 
 -- ----------------------------
--- View structure for `news_all`
--- ----------------------------
-DROP VIEW IF EXISTS `news_all`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `news_all` AS select `news`.`id` AS `id`,`news`.`title` AS `title`,`news`.`content` AS `content`,`news`.`addtime` AS `addtime`,`news`.`pic` AS `pic`,`news`.`admin_id` AS `admin_id`,`news`.`sort_id` AS `sort_id`,`news_emoji`.`news_id` AS `news_id`,`news_emoji`.`support_count` AS `support_count`,`news_emoji`.`hate_count` AS `hate_count`,`news_emoji`.`count(details)` AS `count(details)`,`sort`.`sort_name` AS `sort_name` from ((`news` join `news_emoji`) join `sort`) where ((`news`.`id` = `news_emoji`.`news_id`) and (`news`.`sort_id` = `sort`.`sort_id`) and (`news`.`sort_id` <> 8)) ;
-
--- ----------------------------
--- View structure for `news_emoji`
+-- View structure for news_emoji
 -- ----------------------------
 DROP VIEW IF EXISTS `news_emoji`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `news_emoji` AS select `support`.`news_id` AS `news_id`,`support`.`support_count` AS `support_count`,`support`.`hate_count` AS `hate_count`,count(`comment`.`details`) AS `count(details)` from (`support` left join `comment` on((`support`.`news_id` = `comment`.`news_id`))) group by `support`.`news_id` ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `news_emoji` AS select `support`.`news_id` AS `news_id`,`support`.`support_count` AS `support_count`,`support`.`hate_count` AS `hate_count`,count(`comment`.`details`) AS `count(details)` from (`support` left join `comment` on((`support`.`news_id` = `comment`.`news_id`))) group by `support`.`news_id` ;
+
 
 -- ----------------------------
--- View structure for `news_talk`
+-- View structure for news_all
+-- ----------------------------
+DROP VIEW IF EXISTS `news_all`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `news_all` AS select `news`.`id` AS `id`,`news`.`title` AS `title`,`news`.`content` AS `content`,`news`.`addtime` AS `addtime`,`news`.`pic` AS `pic`,`news`.`admin_id` AS `admin_id`,`news`.`sort_id` AS `sort_id`,`news_emoji`.`news_id` AS `news_id`,`news_emoji`.`support_count` AS `support_count`,`news_emoji`.`hate_count` AS `hate_count`,`news_emoji`.`count(details)` AS `count(details)`,`sort`.`sort_name` AS `sort_name` from ((`news` join `news_emoji`) join `sort`) where ((`news`.`id` = `news_emoji`.`news_id`) and (`news`.`sort_id` = `sort`.`sort_id`) and (`news`.`sort_id` <> 8)) ;
+
+
+
+-- ----------------------------
+-- View structure for news_talk
 -- ----------------------------
 DROP VIEW IF EXISTS `news_talk`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `news_talk` AS select `news`.`id` AS `id`,`news`.`title` AS `title`,`news`.`content` AS `content`,`news`.`addtime` AS `addtime`,`news`.`pic` AS `pic`,`news`.`admin_id` AS `admin_id`,`news`.`sort_id` AS `sort_id`,`news_emoji`.`news_id` AS `news_id`,`news_emoji`.`support_count` AS `support_count`,`news_emoji`.`hate_count` AS `hate_count`,`news_emoji`.`count(details)` AS `count(details)`,`sort`.`sort_name` AS `sort_name` from ((`news` join `news_emoji`) join `sort`) where ((`news`.`id` = `news_emoji`.`news_id`) and (`news`.`sort_id` = `sort`.`sort_id`) and (`news`.`sort_id` = 8)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `news_talk` AS select `news`.`id` AS `id`,`news`.`title` AS `title`,`news`.`content` AS `content`,`news`.`addtime` AS `addtime`,`news`.`pic` AS `pic`,`news`.`admin_id` AS `admin_id`,`news`.`sort_id` AS `sort_id`,`news_emoji`.`news_id` AS `news_id`,`news_emoji`.`support_count` AS `support_count`,`news_emoji`.`hate_count` AS `hate_count`,`news_emoji`.`count(details)` AS `count(details)`,`sort`.`sort_name` AS `sort_name` from ((`news` join `news_emoji`) join `sort`) where ((`news`.`id` = `news_emoji`.`news_id`) and (`news`.`sort_id` = `sort`.`sort_id`) and (`news`.`sort_id` = 8)) ;
 
 -- ----------------------------
--- View structure for `reply_news`
+-- View structure for reply_news
 -- ----------------------------
 DROP VIEW IF EXISTS `reply_news`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `reply_news` AS select `reply_comment`.`send_user` AS `send_user`,`reply_comment`.`recev_user` AS `recev_user`,`reply_comment`.`read` AS `read`,`reply_comment`.`reply_commentid` AS `reply_commentid`,`reply_comment`.`addtime` AS `addtime`,`reply_comment`.`id` AS `id`,`comment`.`news_id` AS `news_id`,`news`.`title` AS `title`,`comment`.`details` AS `details` from ((`reply_comment` join `comment`) join `news`) where ((`reply_comment`.`reply_commentid` = `comment`.`comment_id`) and (`comment`.`news_id` = `news`.`id`)) ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `reply_news` AS select `reply_comment`.`send_user` AS `send_user`,`reply_comment`.`recev_user` AS `recev_user`,`reply_comment`.`read` AS `read`,`reply_comment`.`reply_commentid` AS `reply_commentid`,`reply_comment`.`addtime` AS `addtime`,`reply_comment`.`id` AS `id`,`comment`.`news_id` AS `news_id`,`news`.`title` AS `title`,`comment`.`details` AS `details` from ((`reply_comment` join `comment`) join `news`) where ((`reply_comment`.`reply_commentid` = `comment`.`comment_id`) and (`comment`.`news_id` = `news`.`id`)) ;
 DROP TRIGGER IF EXISTS `reply_del`;
 DELIMITER ;;
 CREATE TRIGGER `reply_del` BEFORE DELETE ON `comment` FOR EACH ROW begin

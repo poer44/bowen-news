@@ -13,7 +13,7 @@ function like() {
                     $('#prelike').val("lock");
                     $(".support").find("span").html("您已点赞！(" + likecount + ")");
                 }
-                else if (data == "0") {
+                else if(data=="0"){
                     $('#prelike').val("lock");
                     $(".support").find("span").html("您已点赞！(" + likecount + ")");
                 }
@@ -30,17 +30,17 @@ function hate() {
     var news_id = parseInt($('#news_id').val());
     var user = $('#user_id').val();
     if ($('#prehate').val() == "0") {
-        var arr = {"hate": hatecount, "id": news_id, "user": user};
+        var arr={"hate":hatecount,"id":news_id,"user":user};
         $.ajax({
-            type: "get",
-            url: "ajax/emoji.php",
-            data: arr,
-            success: function (data) {
+            type:"get",
+            url:"ajax/emoji.php",
+            data:arr,
+            success:function (data) {
                 if (data == "1") {
                     $('#prehate').val("lock");
                     $(".dislike").find("span").html("您已踩过！(" + hatecount + ")");
                 }
-                else if (data == "0") {
+                else if(data=="0"){
                     $('#prelike').val("lock");
                     $(".dislike").find("span").html("您已踩过！(" + hatecount + ")");
                 }
@@ -63,7 +63,6 @@ function commentempty() {
         return true;
     }
 }
-
 function reply(comid) {
     var ruser = 'recev' + comid;
     var obj1 = document.getElementById(ruser);
@@ -85,7 +84,6 @@ function reply(comid) {
     $('#red').val(red);
     $('#send_user').val(send_user);
 }
-
 $('#replybtn').click(function () {
     var replys = $('#editor_id2').val();
     var send_user = $('#send_user').val();

@@ -14,12 +14,12 @@ foreach ($ids as $id) {
     $src = $a->allnews_query("where", array("id", $id));
     if (!empty($src)) {
         $src = $src[0];
-        $src = '../' . $src['pic'];
+        $src='../'.$src['pic'];
         unlink($src);
     } else {
         $picload = $a->talknews_query("where", array($id));
         $picload = $picload[0];
-        $src = '../' . $picload['pic'];
+        $src='../'.$picload['pic'];
         unlink($src);
     }
 }

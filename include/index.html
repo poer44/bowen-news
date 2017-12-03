@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
@@ -76,9 +76,7 @@
                     <div class="col-md-6">
                         <h3><?php echo $v['title'] ?></h3>
                         <div>
-                            <span class="text-danger"
-                                  style="border: 1px solid #880000;border-radius: 5px;"><?php echo $v['sort_name']; ?></span>&nbsp;<span
-                                class="text-info"><?php echo $v['addtime']; ?></span>
+                            <span class="text-danger" style="border: 1px solid #880000;border-radius: 5px;"><?php echo $v['sort_name']; ?></span>&nbsp;<span class="text-info"><?php echo $v['addtime']; ?></span>
                         </div>
                         <div>
                             <img src="../img/zan.png"
@@ -107,9 +105,7 @@
                     <div class="col-md-6">
                         <h3><?php echo $v['title'] ?></h3>
                         <div>
-                            <span class="text-danger"
-                                  style="border: 1px solid #880000;border-radius: 5px;"><?php echo $v['sort_name']; ?></span>&nbsp;<span
-                                class="text-info"><?php echo $v['addtime']; ?></span>
+                            <span class="text-danger" style="border: 1px solid #880000;border-radius: 5px;"><?php echo $v['sort_name']; ?></span>&nbsp;<span class="text-info"><?php echo $v['addtime']; ?></span>
                         </div>
                         <div>
                             <img src="../img/zan.png"
@@ -127,24 +123,22 @@
         </div>
     </div>
     <div class="container">
+    <div class="row">
+        <h1><img src="../img/talk.png" class="ico">热点讨论区</h1>
+        <?php foreach($talkdata as $v) : ?>
         <div class="row">
-            <h1><img src="../img/talk.png" class="ico">热点讨论区</h1>
-            <?php foreach($talkdata as $v) : ?>
-            <div class="row">
-                <a href="../Talk.php?id=<?php echo $v['id'] ?>" target="_blank">
-                    <div class="col-sm-12">
-                        <h3><img src="../img/comments.png" class="ico"><?php echo $v['title'] ?><br>
-                            <small><?php echo $v['content']; ?></small>
-                        </h3>
-                    </div>
-                </a>
+            <a href="../Talk.php?id=<?php echo $v['id'] ?>" target="_blank">
+            <div class="col-sm-12">
+                <h3><img src="../img/comments.png" class="ico"><?php echo $v['title'] ?><br><small><?php echo $v['content']; ?></small></h3>
             </div>
-            <?php endforeach;?>
-            <div style="text-align: right">
-                <a href="../talk_view.php?sort_id=8&p=1"><span class="text-info">更多讨论>>></span></a>
-            </div>
-            <hr class="hr">
+            </a>
         </div>
+        <?php endforeach;?>
+        <div style="text-align: right">
+            <a href="../talk_view.php?sort_id=8&p=1"><span class="text-info">更多讨论>>></span></a>
+        </div>
+        <hr class="hr">
+    </div>
     </div>
 </div>
 
@@ -164,8 +158,7 @@
                 <h3 style="color: white">友情链接</h3>
                 <hr class="hr">
                 <a href="../manage/admin_login.html" target="_blank"><span class="glyphicon glyphicon-book"> 后台管理</span></a>
-                <a href="http://github.com/poer44/bowen-news" target="_blank"><span
-                        class="glyphicon glyphicon-book"> GitHub源码</span></a>
+                <a href="http://github.com/poer44/bowen-news" target="_blank"><span class="glyphicon glyphicon-book"> GitHub源码</span></a>
             </div>
             <div class="col-md-4">
                 <h3 style="color: white">联系我们</h3>

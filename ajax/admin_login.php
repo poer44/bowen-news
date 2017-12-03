@@ -9,8 +9,8 @@ require '../include/bowen_pdo.php';
 if ($_POST) {
     $id = $_POST['id'];
     $pwd = md5($_POST['pwd']);
-    $a = new bowen_pdo();
-    $stmt = $a->pwd_query("admin", array($id));
+    $a=new bowen_pdo();
+    $stmt=$a->pwd_query("admin",array($id));
     if ($stmt == null) {
         echo 'querynull';
     } else {

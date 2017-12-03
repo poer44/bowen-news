@@ -7,13 +7,14 @@
  */
 require '../manage/admin_session_check.php';
 require '../include/bowen_pdo.php';
-$lock = new bowen_pdo();
-$stateint = $lock->lock_query();
+$lock=new bowen_pdo();
+$stateint =$lock->lock_query();
 if ($stateint == '0') {
     if ($lock->lock_update(array(1)) == 1) {
         echo 'lock';
     }
-} else {
+}
+else {
     if ($lock->lock_update(array(0)) == 1) {
         echo 'unlock';
     }

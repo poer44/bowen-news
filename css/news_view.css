@@ -89,25 +89,20 @@
     width: 60px;
     height: 60px;
 }
-
 .img-responsive {
     margin: auto auto;
 }
-
-#slider {
+#slider{
     float: right;
     text-align: right;
     margin-right: 0px;
 }
-
-#comt {
+#comt{
     font-size: 20px;
 }
-
-.hr {
-    border-top: 2px solid #428bca;
+.hr{
+    border-top:2px solid #428bca;
 }
-
-.ncontent > span {
+.ncontent>span{
     font-size: 20px;
 }

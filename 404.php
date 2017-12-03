@@ -6,8 +6,8 @@
  * Time: 下午 2:07
  */
 require './include/bowen_pdo.php';
-$lock = new bowen_pdo();
-if ($lock->lock_query() == 1) {
+$lock=new bowen_pdo();
+if($lock->lock_query()==1){
     require './include/404.html';
     exit;
 }

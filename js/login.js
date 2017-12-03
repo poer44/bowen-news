@@ -117,12 +117,12 @@ function login() {
                         window.history.go(-1);
                         window.location.reload();
                     }
-                    else if (i == 1) {
+                    else if(i==1){
                         window.history.go(-2);
                         window.location.reload();
                     }
-                    else if (i == 2) {
-                        window.location.href = "index.php";
+                    else if(i==2){
+                        window.location.href="index.php";
                     }
                 }
             }

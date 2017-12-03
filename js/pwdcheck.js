@@ -13,12 +13,11 @@ $().ready(function () {
                         return false;
                     }
                 } catch (e) {
-                    if (typeof(eval(user_pwdupdate)) == "function") {
+                    if(typeof(eval(user_pwdupdate)) == "function") {
                         user_pwdupdate();
                         return false;
                     }
-                }
-                ;
+                };
                 return false;
             }
             else {

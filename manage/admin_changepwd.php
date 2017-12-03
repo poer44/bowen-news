@@ -24,7 +24,7 @@
                     if (!isset($_SESSION)) {
                         session_start();
                     }
-                    echo '<span class="glyphicon glyphicon-user text-primary">管理员' . $_SESSION['admin_id'] . '</span>'; ?>
+                    echo '<span class="glyphicon glyphicon-user text-primary">管理员' . $_SESSION['admin_id'].'</span>'; ?>
                 </td>
             </tr>
             </thead>

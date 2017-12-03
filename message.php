@@ -1,9 +1,9 @@
 <?php
 require './404.php';
 require './include/user_session_check.php';
-$a = new bowen_pdo();
-$message = $a->reply_query(array($user_check));
-$a->replyread_update(array(1, $user_check));
+$a=new bowen_pdo();
+$message=$a->reply_query(array($user_check));
+$a->replyread_update(array(1,$user_check));
 include './include/nav.php';
 ?>
 <!DOCTYPE html>
@@ -34,16 +34,16 @@ include './include/nav.php';
     <hr>
     <table class="table">
         <?php
-        $i = 0;
-        foreach ($message as $vs):
+        $i=0;foreach($message as $vs):
             ?>
             <thead style="background-color: #d9edf7">
             <tr>
                 <?php $i++; ?>
                 <td>
-                    <?php if ($vs['read'] == 0) {
-                        echo "<span class='glyphicon glyphicon-envelope'>【未读】</span>";
-                    } else if ($vs['read'] == 1) {
+                    <?php if($vs['read']==0){
+                      echo "<span class='glyphicon glyphicon-envelope'>【未读】</span>";
+                    }
+                    else if($vs['read']==1){
                         echo "<span class='glyphicon glyphicon-ok'>【已读】</span>";
                     }
                     ?>
@@ -51,7 +51,7 @@ include './include/nav.php';
                 <td><a href="newsview.php?id=<?php echo $vs['news_id'] ?>" target="_blank"><span
                                 class="text-info">RE:<?php echo $vs['title'] ?></span></a></td>
                 <td><span class="text-info"><?php echo $vs['addtime'] ?></span></td>
-                <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#" . $i ?></span></td>
+                <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#".$i ?></span></td>
             </tr>
             </thead>
             <tbody>
@@ -62,7 +62,7 @@ include './include/nav.php';
             </tr>
             </tbody>
         <?php endforeach;
-        if ($message == null) {
+        if ($message==null){
             echo '暂时没有消息';
         }
         ?>

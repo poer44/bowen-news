@@ -38,8 +38,15 @@
                     ?>
                 <thead style="background-color: #d9edf7">
                 <tr>
-                    <?php $i++; ?>
-                    <td><a href="../newsview.php?id=<?php echo $vs['news_id'] ?>" target="_blank"><span
+                    <?php $i++;
+if(array_search($vs['news_id'],$tidlist)!=null){
+$n="../Talk.php?id=".$vs['news_id'];
+}
+else{
+$n="../newsview.php?id=".$vs['news_id'];
+}
+?>
+                    <td><a href="<?php echo $n ?>" target="_blank"><span
                             class="text-info">RE:<?php echo $vs['title'] ?></span></a></td>
                     <td><span class="text-info"><?php echo $vs['addtime'] ?></span></td>
                     <td id="<?php echo $i ?>"><span class="text-success"><?php echo "#".$i ?></span></td>

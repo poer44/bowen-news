@@ -10,8 +10,8 @@ if ($_POST) {
     $id = $_POST['id'];
     $pwd = md5($_POST['pwd']);
     $reIP = $_SERVER["REMOTE_ADDR"];
-    $a = new bowen_pdo();
-    $result = $a->user_insert(array($id, $pwd, $reIP));
+    $a=new bowen_pdo();
+    $result =$a->user_insert(array($id,$pwd,$reIP));
     if ($result == 1) {
         echo 'success';
     } else {

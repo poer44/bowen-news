@@ -1,12 +1,11 @@
-function search_check() {
-    if ($('#search').val() == "") {
-        return false;
+    function search_check() {
+        if ($('#search').val() == "") {
+            return false;
+        }
+        else {
+            return true;
+        }
     }
-    else {
-        return true;
-    }
-}
-
 $('#search').bind('input propertychange', function () {
     var formData = new FormData($("#ss")[0]);
     $.ajax({

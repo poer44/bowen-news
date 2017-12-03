@@ -42,7 +42,6 @@ document.getElementById("checkReverse").onclick = function () {
     }
     return true;
 };
-
 //判断选择
 function checked() {
     var ids = document.getElementsByName("id[]");
@@ -53,11 +52,11 @@ function checked() {
         }
     }
     if (lock == 0) {
-        var conf = confirm('确定要删除选中的内容吗？');
-        if (conf == true) {
+        var conf=confirm('确定要删除选中的内容吗？');
+        if(conf==true){
             return true;
         }
-        else {
+        else{
             return false;
         }
     }
@@ -69,7 +68,6 @@ function checked() {
         return false;
     }
 }
-
 function GetQueryString(name) {//正则表达式获取地址栏参数
     var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
     var r = window.location.search.substr(1).match(reg);

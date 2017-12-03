@@ -73,22 +73,18 @@ footer {
 h1 small {
     color: #2e6da4;
 }
-
-.glyphicon {
-    color: white;
+.glyphicon{
+    color:white;
 }
-
-.ico {
+.ico{
     width: 50px;
     height: 50px;
 }
-
-#qrcode {
+#qrcode{
     width: 100px;
     height: 100px;
     margin-bottom: 40px;
 }
-
-.hr {
-    border-top: 2px solid #428bca;
+.hr{
+    border-top:2px solid #428bca;
 }
