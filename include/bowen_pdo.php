@@ -57,6 +57,7 @@ class bowen_pdo
             $sql="select id from news_talk";
             $sth = $pdo->prepare($sql);
             $sth->execute($arr);
+
         }
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
