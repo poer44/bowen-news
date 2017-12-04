@@ -1,7 +1,7 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: poer44
+ * User: poer4
  * Date: 2017/11/5
  * Time: 15:00
  */
@@ -21,12 +21,10 @@ class bowen_pdo
         if ($key == "orderby") {
             $sql = "SELECT * FROM news_all order by $arr[0] desc";
             $sth = $pdo->query($sql);
-        }
-        else if ($key == "orderby_limit") {
+        } else if ($key == "orderby_limit") {
             $sql = "SELECT * FROM news_all order by $arr[0] desc limit 0,10";
             $sth = $pdo->query($sql);
-        }
-        else if ($key == "where") {
+        } else if ($key == "where") {
             $sth = $pdo->prepare("select * from news_all where $arr[0] = ?");
             $sth->execute(array($arr[1]));
         } else if ($key == "title") {
@@ -36,28 +34,21 @@ class bowen_pdo
         }
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
-    public function talknews_query($key,$arr)
+
+    public function talknews_query($key, $arr)
     {
         $dsn = "mysql:dbname=$this->dbname;host=$this->host;charset=$this->charset";
         $pdo = new PDO($dsn, "$this->uid", "$this->pwd");
-        if($key=="all") {
+        if ($key == "all") {
             $sql = "select * from news_talk where sort_id=8";
             $sth = $pdo->prepare($sql);
-        }
-        else if($key=="limit5"){
-            $sql="select * from news_talk where sort_id=8 order by addtime desc limit 0,5";
+        } else if ($key == "limit5") {
+            $sql = "select * from news_talk where sort_id=8 order by addtime desc limit 0,5";
             $sth = $pdo->query($sql);
-        }
-        else if($key=="where"){
-            $sql="select * from news_talk where id=?";
+        } else if ($key == "where") {
+            $sql = "select * from news_talk where id=?";
             $sth = $pdo->prepare($sql);
             $sth->execute($arr);
-        }
-        else if($key=="idlist"){
-            $sql="select id from news_talk";
-            $sth = $pdo->prepare($sql);
-            $sth->execute($arr);
-
         }
         return $sth->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -129,14 +120,14 @@ class bowen_pdo
         $sth = $pdo->prepare("update state set `lock`=?");
         return $sth->execute($arr);
     }
-    public function userop_update($key,$arr)
+
+    public function userop_update($key, $arr)
     {
         $dsn = "mysql:dbname=$this->dbname;host=$this->host;charset=$this->charset";
         $pdo = new PDO($dsn, "$this->uid", "$this->pwd");
-        if($key=="sup") {
+        if ($key == "sup") {
             $sth = $pdo->prepare("update support set support_count=?,userop_json=? where news_id=?");
-        }
-        else if($key=="hate"){
+        } else if ($key == "hate") {
             $sth = $pdo->prepare("update support set hate_count=?,userop_json=? where news_id=?");
         }
         return $sth->execute($arr);
@@ -276,6 +267,7 @@ class bowen_pdo
         }
         return $sth->execute($arr);
     }
+
     public function comment_del($arr)
     {
         $dsn = "mysql:dbname=$this->dbname;host=$this->host;charset=$this->charset";
@@ -283,6 +275,7 @@ class bowen_pdo
         $sth = $pdo->prepare("delete from comment where comment_id=?");
         return $sth->execute($arr);
     }
+
     public function user_del($arr)
     {
         $dsn = "mysql:dbname=$this->dbname;host=$this->host;charset=$this->charset";
@@ -290,6 +283,7 @@ class bowen_pdo
         $sth = $pdo->prepare("delete from `user` where `user_id`=?");
         return $sth->execute($arr);
     }
+
     public function news_del($arr)
     {
         $dsn = "mysql:dbname=$this->dbname;host=$this->host;charset=$this->charset";
