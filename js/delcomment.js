@@ -24,7 +24,6 @@ function user_homedel(comid,uid) {
                 var k = 'c' + comid;
                 var obj = document.getElementsByClassName(k);
                 $('#alert').show();
-                $(obj).hide(800);
                 $(obj).remove();
         }
     })
